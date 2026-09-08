@@ -1,6 +1,5 @@
 // STEP 1: Print text to the browser console is string ""
-console.log("Hello world!")
-alert("Hello World!")
+console.log("Hello world!");
 
 // STEP 2: Variables
 // Store text values in variables
@@ -14,10 +13,10 @@ console.log("Hello! my name is " + name + ". I'm " + age + " and my favourite an
 // STEP 3: User interaction
 
 // Display a pop-up message
+alert("Hello!")
 // Ask the user for their name
-// Print the user's answer
-
 let visitor = prompt("What is your name?");
+// Print the user's answer
 
 if (visitor != null) {
     console.log("Hello " + visitor + "! Thanks for visiting my site!");
