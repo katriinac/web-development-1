@@ -28,10 +28,11 @@ img {
 /* Style all links */
 a {
     color:aquamarine;
+    text-decoration: none;
 }
 
 
 /* Style links when the mouse is over them */
 a:hover {
-    text-decoration: none;
+    text-decoration: underline;
 }
