@@ -1,0 +1,37 @@
+/* Style the whole page */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;'
+    padding: 20px;
+}
+    
+/* Style the main heading */
+h1 {
+    color:blueviolet;
+}
+
+
+/* Style all paragraphs */
+p {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Style all images */
+img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+
+/* Style all links */
+a {
+    color:aquamarine;
+}
+
+
+/* Style links when the mouse is over them */
+a:hover {
+    text-decoration: none;
+}
