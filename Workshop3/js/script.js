@@ -49,3 +49,25 @@ otsikko1.addEventListener("click", function (){
     otsikko1.style.color ="red";
     otsikko1.innerHTML ="Bye bye mouse!";
 });
+
+const feedback = document.querySelector("#feedback");
+const status = document.querySelector("#status");
+const charcount = document.querySelector("#charcount");
+const preview = document.querySelector("#preview");
+
+feedback.addEventListener("focus", function(){
+    status.innerHTML = "Kirjoita palautteesi tähän!";
+    feedback.style.backgroundColor = "#ff23";
+});
+
+feedback.addEventListener("blur", function (){
+    status.innerHTML = "";
+    feedback.style.backgroundColor="";
+});
+
+feedback.addEventListener("input", function(){
+    const teksti = feedback.value;
+    const pituus = teksti.length;
+    charcount.innerHTML = `${pituus}/200`;
+    preview.innerHTML = teksti;
+});
