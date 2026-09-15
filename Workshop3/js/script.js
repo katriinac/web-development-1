@@ -39,3 +39,13 @@ function showTable(){
     const container = document.querySelector("#tableContainer");
     container.innerHTML = table;
 };
+const harjoitus2 = document.querySelector("#harjoitus2");
+harjoitus2.addEventListener("mouseover", function(){
+    console.log("Stepped over me with a mouse!")
+});
+
+const otsikko1 = document.querySelector("#otsikko1");
+otsikko1.addEventListener("click", function (){
+    otsikko1.style.color ="red";
+    otsikko1.innerHTML ="Bye bye mouse!";
+});
