@@ -71,3 +71,26 @@ feedback.addEventListener("input", function(){
     charcount.innerHTML = `${pituus}/200`;
     preview.innerHTML = teksti;
 });
+
+const feedbackForm = document.querySelector("#feedbackForm");
+feedbackForm.addEventListener("submit", function(event){
+    event.preventDefault();
+    if(feedback.value.length < 10 || feedback.value.length > 200){
+        status.innerHTML = "Palaute pitää olla 10-200 merkkiä pitkä.";
+    }
+    else {
+        feedback.value = "";
+        charcount.innerHTML = "";
+        preview.innerHTML = "";
+        status.innerHTML = "Thank you for your feedback!";
+    }
+});
+
+const keybox = document.querySelector("#keybox");
+const keyinfo = document.querySelector("#keyinfo");
+document.addEventListener("keydown", function(event){
+    console.log(event);
+    keyinfo.innerHTML = event.key + "-" + event.code;
+    keybox.innerHTML = event.key;
+    keybox.style.fontSize = "50px";
+});
