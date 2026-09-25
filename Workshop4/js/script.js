@@ -43,42 +43,83 @@ showAnimal.addEventListener("click", function(){
     animalContent.hidden = false;
 });
 
-// -------------------------------------------------- EXAMPLE 1 ANIMAL TABLE
-// -------------------------------------------------- EXAMPLE 1 ANIMAL TABLE
-
-const animalButton = document.querySelector("#animalButton");
-const animalTable = document.querySelector("#animalTable");
-
-animalButton.addEventListener("click", function () {
-    animalTable.hidden = !animalTable.hidden;
-    console.log("Button Pressed");
-});
-
-
-// -------------------------------------------------- EXAMPLE 3 LISTEN DROPDOWN SELECT
-// -------------------------------------------------- EXAMPLE 3 LISTEN DROPDOWN SELECT
-
 const animalSelect = document.querySelector("#animalSelect");
 const animalName = document.querySelector("#animalName");
 const animalImage = document.querySelector("#animalImage");
 const animalDescription = document.querySelector("#animalDescription");
 
-// listener for the select element from the drop down list.
-
 animalSelect.addEventListener("change", function () {
-
     const selectedAnimal = animalSelect.value;
 
-    // function to update the DOM based on the selected animal
-
-    console.log("Selected animal:", selectedAnimal);
-
     if (selectedAnimal === "tiger") {
-        animalName.textContent = "Tiger";
+        animalName.textContent = "Tiikeri";
         animalImage.src = "images/tiger.png";
         animalImage.alt = "Tiger";
         animalDescription.textContent =
-            "Tigers are the largest members of the cat family.";
+            "Tiikerit ovat suuria petoeläimiä.";
+    }
+    else if (selectedAnimal === "elephant") {
+        animalName.textContent = "Elefantti";
+        animalImage.src = "images/elephant.png";
+        animalImage.alt = "Elephnt";
+        animalDescription.textContent =
+            "Elefantit ovat maailman suurimpia maaeläimiä.";
+    }
+    else if (selectedAnimal === "penguin") {
+        animalName.textContent = "Pingviini";
+        animalImage.src = "images/penguin.png";
+        animalImage.alt = "penguin";
+        animalDescription.textContent =
+            "Pingviinit ovat söpöjä.";
+    }
+    else if (selectedAnimal === "panda") {
+        animalName.textContent = "Panda";
+        animalImage.src = "images/panda.png";
+        animalImage.alt = "panda";
+        animalDescription.textContent =
+            "Pandat ovat isoja.";
     }
 
 });
+
+animalImage.addEventListener("mouseenter", function(){
+    animalImage.classList.add("image-highlight");
+});
+animalImage.addEventListener("mouseleave", function(){
+    animalImage.classList.remove("image-highlight");
+});
+
+const form = document.querySelector("#animalForm");
+const observationAnimal = document.querySelector("#observationAnimal");
+const observationLocation = document.querySelector("#observationLocation");
+const observationDate = document.querySelector("#observationDate");
+const observationTable = document.querySelector("#observationTableBody");
+
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+
+    if (
+        observationAnimal.value === "" ||
+        observationLocation.value === "" ||
+        observationDate.value === ""
+    ){
+        alert("Yritä uudelleen.");
+        return;
+    }
+
+    const row = document.createElement("tr");
+    const aCell = document.createElement("td");
+    const lCell = document.createElement("td");
+    const dCell = document.createElement("td");
+
+    aCell.textContent = observationAnimal.value;
+    lCell.textContent = observationLocation.value;
+    dCell.textContent = observationDate.value;
+
+    row.append(aCell);
+    row.append(lCell);
+    row.append(dCell);
+
+    observationTable.append(row);
+});
+
