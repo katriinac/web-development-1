@@ -20,8 +20,8 @@
 	<p>JSON stands for JavaScript Object Notation. It represents data in a format that JavaScript can understand
 		directly, so no conversion is needed before using it.</p>
 	<p>
-		<button>Show first and last names only</button>
-		<button>Show all details</button>
+		<button id="showname">Show first and last names only</button>
+		<button id="showall">Show all details</button>
 	</p>
 	<p>Create a new JSON dataset in your JavaScript code using the example below. Then write functions that run when
 		the buttons are clicked.</p>
@@ -43,8 +43,8 @@
 	<p>There are two buttons below. Edit the source code and add onclick event handlers to them. Implement the
 		functionality described here.</p>
 	<p>
-		<button>Load raw data</button>
-		<button>Load and parse data</button>
+		<button id="loadraw">Load raw data</button>
+		<button id="loadparse">Load and parse data</button>
 	</p>
 
 	<ul>
@@ -71,7 +71,7 @@
 		Click the link to see the response.</p>
 	<ul>
 		<li>First, create an app that displays raw weather data (temperature, cloud cover, and humidity) for a
-			specified city when a button is clicked. <button>Fetch data</button></li>
+			specified city when a button is clicked. <button id="fetch">Fetch data</button></li>
 		<li>Once this works, parse the data and display it in a div.</li>
 		<li>Next, add an onchange event to the drop-down menu so users can choose which city's data to display.</li>
 		<li>Finally, add functionality to the input field so users can enter a search query, send it to the
