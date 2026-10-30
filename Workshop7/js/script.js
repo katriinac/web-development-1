@@ -42,3 +42,38 @@ loadraw.addEventListener("click", function() {
             console.log("Error fetching data:", error);
         });
 });
+
+var loadparse = document.getElementById("loadparse");
+
+loadparse.addEventListener("click", function() {
+    fetch(link)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(movies) {
+            display(movies);
+        })
+        .catch(function(error) {
+            console.log("Error fetching data:", error);
+        });
+});
+
+function display(movies) {
+
+    if (movies.Search) {
+        var table = "<table>";
+        table += "<tr><th>Title</th><th>Year</th><th>Type</th><th>Poster</th></tr>";
+        var index = 0;
+        while (index < movies.Search.length) {
+            table += "<tr>";
+            table += "<td>" + movies.Search[index].Title + "</td>";
+            table += "<td>" + movies.Search[index].Year + "</td>";
+            table += "<td>" + movies.Search[index].Type + "</td>";
+            table += "<td><img src='" + movies.Search[index].Poster + "' width='200'></td>";
+            table += "</tr>";
+            index = index + 1;
+        }
+        table += "</table>";
+        rawdata.innerHTML = table;
+    }
+}
