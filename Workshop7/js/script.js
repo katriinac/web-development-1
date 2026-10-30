@@ -25,4 +25,20 @@ showall.addEventListener("click", function(){
     }
 });
 
+var loadraw = document.getElementById("loadraw");
+var rawdata = document.getElementById("rawdata");
 
+var link = "http://www.omdbapi.com/?s=star+wars&apikey=cbbc6750";
+
+loadraw.addEventListener("click", function() {
+    fetch(link)
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(data) {
+            rawdata.textContent = data;
+        })
+        .catch(function(error) {
+            console.log("Error fetching data:", error);
+        });
+});
