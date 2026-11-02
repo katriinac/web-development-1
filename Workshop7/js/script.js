@@ -77,3 +77,45 @@ function display(movies) {
         rawdata.innerHTML = table;
     }
 }
+
+var fetchButton = document.getElementById("fetch");
+var weatherdata = document.getElementById("weatherdata");
+var city = document.getElementById("city");
+var api = "2fc2095e93132319e44e046ee47feaec";
+var search = document.getElementById("search");
+var citysearch = document.getElementById("citysearch");
+
+fetchButton.addEventListener("click", function() {
+    getweather("");
+});
+
+city.addEventListener("change", function(){
+    getweather("");
+});
+
+search.addEventListener("click", function(){
+    var searchcity = citysearch.value;
+    if (searchcity != ""){
+        getweather(searchcity);
+    }
+});
+
+function getweather(searchcity) {
+    chosencity = city.value;
+    if (searchcity != ""){
+        chosencity = searchcity;
+    }
+
+    var uri = "http://api.openweathermap.org/data/2.5/weather?q=" + chosencity + "&units=metric&mode=JSON&APPID=" + api;
+    fetch(uri)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            weatherdata.innerHTML =
+            "Weather in " + data.name + "<br>" + "Temperature: " + data.main.temp + " C<br>" + "Clouds: " + data.clouds.all + " %<br>" + "Humidity: " + data.main.humidity + "%";
+        })
+        .catch(function(error) {
+            console.log("Error fetching data:", error);
+        });
+}
