@@ -81,7 +81,7 @@ function display(movies) {
 var fetchButton = document.getElementById("fetch");
 var weatherdata = document.getElementById("weatherdata");
 var city = document.getElementById("city");
-var api = "2fc2095e93132319e44e046ee47feaec";
+var api = "YOUR_API_KEY";
 var search = document.getElementById("search");
 var citysearch = document.getElementById("citysearch");
 
