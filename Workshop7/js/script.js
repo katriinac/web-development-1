@@ -1,11 +1,11 @@
-var text = '{ "employees" : [' +
+const text = '{ "employees" : [' +
 			'{ "firstName":"John" , "lastName":"Doe" },' +
 			'{ "firstName":"Anna" , "lastName":"Smith" },' +
 			'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
-var data = JSON.parse(text);
-var showname = document.getElementById("showname");
-var showall = document.getElementById("showall");
-var jsondata = document.getElementById("jsondata");
+const data = JSON.parse(text);
+const showname = document.getElementById("showname");
+const showall = document.getElementById("showall");
+const jsondata = document.getElementById("jsondata");
 
 showname.addEventListener("click", function() {
     jsondata.innerHTML = "";
@@ -25,10 +25,10 @@ showall.addEventListener("click", function(){
     }
 });
 
-var loadraw = document.getElementById("loadraw");
-var rawdata = document.getElementById("rawdata");
+const loadraw = document.getElementById("loadraw");
+const rawdata = document.getElementById("rawdata");
 
-var link = "http://www.omdbapi.com/?s=star+wars&apikey=cbbc6750";
+const link = "http://www.omdbapi.com/?s=star+wars&apikey=cbbc6750";
 
 loadraw.addEventListener("click", function() {
     fetch(link)
@@ -43,7 +43,7 @@ loadraw.addEventListener("click", function() {
         });
 });
 
-var loadparse = document.getElementById("loadparse");
+const loadparse = document.getElementById("loadparse");
 
 loadparse.addEventListener("click", function() {
     fetch(link)
@@ -61,9 +61,9 @@ loadparse.addEventListener("click", function() {
 function display(movies) {
 
     if (movies.Search) {
-        var table = "<table>";
+        const table = "<table>";
         table += "<tr><th>Title</th><th>Year</th><th>Type</th><th>Poster</th></tr>";
-        var index = 0;
+        const index = 0;
         while (index < movies.Search.length) {
             table += "<tr>";
             table += "<td>" + movies.Search[index].Title + "</td>";
@@ -78,12 +78,12 @@ function display(movies) {
     }
 }
 
-var fetchButton = document.getElementById("fetch");
-var weatherdata = document.getElementById("weatherdata");
-var city = document.getElementById("city");
-var api = "YOUR_API_KEY";
-var search = document.getElementById("search");
-var citysearch = document.getElementById("citysearch");
+const fetchButton = document.getElementById("fetch");
+const weatherdata = document.getElementById("weatherdata");
+const city = document.getElementById("city");
+const api = "YOUR_API_KEY";
+const search = document.getElementById("search");
+const citysearch = document.getElementById("citysearch");
 
 fetchButton.addEventListener("click", function() {
     getweather("");
@@ -94,7 +94,7 @@ city.addEventListener("change", function(){
 });
 
 search.addEventListener("click", function(){
-    var searchcity = citysearch.value;
+    const searchcity = citysearch.value;
     if (searchcity != ""){
         getweather(searchcity);
     }
@@ -106,7 +106,7 @@ function getweather(searchcity) {
         chosencity = searchcity;
     }
 
-    var uri = "http://api.openweathermap.org/data/2.5/weather?q=" + chosencity + "&units=metric&mode=JSON&APPID=" + api;
+    const uri = "http://api.openweathermap.org/data/2.5/weather?q=" + chosencity + "&units=metric&mode=JSON&APPID=" + api;
     fetch(uri)
         .then(function(response) {
             return response.json();
