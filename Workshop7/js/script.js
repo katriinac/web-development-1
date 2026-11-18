@@ -17,7 +17,7 @@ showname.addEventListener("click", function() {
 });
 
 showall.addEventListener("click", function(){
-    jsondata.innerHTML = "";
+    jsondata.innerHTML = "Employees: " + "<br>";
     let i = 0;
     while(i < data.employees.length){
         jsondata.innerHTML += "First name: " + data.employees[i].firstName + ", " + "Last name: " + data.employees[i].lastName + "<br>"
