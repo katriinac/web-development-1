@@ -1,11 +1,11 @@
-const apiKey = "api"; // <-- Add your API key here
+const apiKey = "apikey"; // <-- Add your API key here
 let tempChart = null; // Global chart reference
 let chartData = {}; // Store data and labels for reuse
 let City = "Helsinki";
 const language = document.documentElement.lang === "en" ? "en" : "fi";
 
 async function haeSaa() {
-  city = document.getElementById("kaupunki").value;
+  let city = document.getElementById("kaupunki").value;
   let url = ` https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=${language}&appid=${apiKey}`;
   try {
     const response = await axios.get(url);
