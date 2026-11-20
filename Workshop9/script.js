@@ -88,8 +88,6 @@ VANTA.FOG({
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
-    minHeight: 100,
-    minWidth: 200,
     highlightColor: 0x9bbbd1,
     midtoneColor: 0x7896b0,
     lowlightColor: 0x354b63,
