@@ -1,4 +1,4 @@
-const apiKey = "ff64c247a136f706923d1ee0d55d71e2"; // <-- Add your API key here
+const apiKey = "apikey"; // <-- Add your API key here
 let tempChart = null; // Global chart reference
 let chartData = {}; // Store data and labels for reuse
 let City = "Helsinki";
