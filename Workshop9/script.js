@@ -5,7 +5,7 @@ let City = "Helsinki";
 const language = document.documentElement.lang === "en" ? "en" : "fi";
 
 async function haeSaa() {
-  let city = document.getElementById("kaupunki").value;
+  city = document.getElementById("kaupunki").value;
   let url = ` https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=${language}&appid=${apiKey}`;
   try {
     const response = await axios.get(url);
