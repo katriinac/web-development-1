@@ -1,4 +1,4 @@
-const apiKey = "apikey"; // <-- Add your API key here
+const apiKey = "ff64c247a136f706923d1ee0d55d71e2"; // <-- Add your API key here
 let tempChart = null; // Global chart reference
 let chartData = {}; // Store data and labels for reuse
 let City = "Helsinki";
@@ -83,4 +83,17 @@ $("#haeSaaPainike").on("click", function () {
     haeSaa();
   });
 
-
+VANTA.FOG({
+    el: "#vanta-background",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 100,
+    minWidth: 200,
+    highlightColor: 0x9bbbd1,
+    midtoneColor: 0x7896b0,
+    lowlightColor: 0x354b63,
+    baseColor: 0x263849,
+    blurFactor: 0.5,
+    speed: 5.0
+});
